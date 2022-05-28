@@ -1,82 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Maven换源</title>
-    <url>/2022/01/10/Maven%E6%8D%A2%E6%BA%90/</url>
-    <content><![CDATA[<p>maven文件路径下找到setting.xml进行编辑修改：<br>D:\Software\JavaTools\apache-maven-3.6.1\conf\settings.xml</p>
-<span id="more"></span>
-
-<!-- 阿里云仓库 -->
-<pre><code>    &lt;mirror&gt;
-        &lt;id&gt;alimaven&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;name&gt;aliyun maven&lt;/name&gt;
-        &lt;url&gt;http://maven.aliyun.com/nexus/content/repositories/central/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- 中央仓库1 --&gt;
-    &lt;mirror&gt;
-        &lt;id&gt;repo1&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-        &lt;url&gt;http://repo1.maven.org/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- 中央仓库2 --&gt;
-    &lt;mirror&gt;
-        &lt;id&gt;repo2&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-        &lt;url&gt;http://repo2.maven.org/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-</code></pre>
-]]></content>
-      <categories>
-        <category>maven</category>
-      </categories>
-      <tags>
-        <tag>maven换阿里源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Oracle基础（一）</title>
-    <url>/2021/09/13/Oracle%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="用户操作"><a href="#用户操作" class="headerlink" title="用户操作"></a>用户操作</h2><h3 id="1-解锁用户"><a href="#1-解锁用户" class="headerlink" title="1. 解锁用户"></a>1. 解锁用户</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 account unlock;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="2-锁定用户"><a href="#2-锁定用户" class="headerlink" title="2. 锁定用户"></a>2. 锁定用户</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 account lock;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="3-用户密码修改"><a href="#3-用户密码修改" class="headerlink" title="3. 用户密码修改"></a>3. 用户密码修改</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 identified by 密码 ;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="4-用户默认修改表空间"><a href="#4-用户默认修改表空间" class="headerlink" title="4. 用户默认修改表空间"></a>4. 用户默认修改表空间</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 default tablspace 表空间名称 ;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<span id="more"></span>
-
-<h2 id="表空间操作"><a href="#表空间操作" class="headerlink" title="表空间操作"></a>表空间操作</h2><h3 id="1-表空间状态修改"><a href="#1-表空间状态修改" class="headerlink" title="1. 表空间状态修改"></a>1. 表空间状态修改</h3><h4 id="1-1-联机状态-online"><a href="#1-1-联机状态-online" class="headerlink" title="1.1 联机状态 online"></a>1.1 联机状态 online</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 online;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="1-2-脱机状态-offline"><a href="#1-2-脱机状态-offline" class="headerlink" title="1.2 脱机状态 offline"></a>1.2 脱机状态 offline</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 offline;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="2-表空间读写属性设置-（默认属性是-online-，表示可读写）"><a href="#2-表空间读写属性设置-（默认属性是-online-，表示可读写）" class="headerlink" title="2. 表空间读写属性设置 （默认属性是 online ，表示可读写）"></a>2. 表空间读写属性设置 （默认属性是 online ，表示可读写）</h3><h4 id="2-1-只读-read-only"><a href="#2-1-只读-read-only" class="headerlink" title="2.1 只读 read only"></a>2.1 只读 read only</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 read only;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="2-2-读写-read-write"><a href="#2-2-读写-read-write" class="headerlink" title="2.2 读写 read write"></a>2.2 读写 read write</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 read write;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="3-表空间状态查询"><a href="#3-表空间状态查询" class="headerlink" title="3. 表空间状态查询"></a>3. 表空间状态查询</h3><pre class="line-numbers language-none"><code class="language-none">alter tablespace_name &#39;表空间名称&#39;,status &#39;表空间状态&#39; from dba_tablespaces where tablespacename&#x3D;&#39;表空间名称&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="4-删除表空间"><a href="#4-删除表空间" class="headerlink" title="4. 删除表空间"></a>4. 删除表空间</h3><h4 id="4-1-删除空表空间"><a href="#4-1-删除空表空间" class="headerlink" title="4.1 删除空表空间"></a>4.1 删除空表空间</h4><pre class="line-numbers language-none"><code class="language-none">drop tablespace 表空间名称;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="4-2-删除非空表空间"><a href="#4-2-删除非空表空间" class="headerlink" title="4.2 删除非空表空间"></a>4.2 删除非空表空间</h4><pre class="line-numbers language-none"><code class="language-none">drop tablespace 表空间名称 including contents;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="4-3-删除非空表空间及物理文件"><a href="#4-3-删除非空表空间及物理文件" class="headerlink" title="4.3 删除非空表空间及物理文件"></a>4.3 删除非空表空间及物理文件</h4><pre class="line-numbers language-none"><code class="language-none">drop tablespace 表空间名称 including contents and datafiles;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h2><h3 id="1-修改表中字段类型"><a href="#1-修改表中字段类型" class="headerlink" title="1. 修改表中字段类型"></a>1. 修改表中字段类型</h3><pre class="line-numbers language-none"><code class="language-none">alter  table 表名 modify 字段名 字段类型;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="2-修改表中字段名称"><a href="#2-修改表中字段名称" class="headerlink" title="2. 修改表中字段名称"></a>2. 修改表中字段名称</h3><pre class="line-numbers language-none"><code class="language-none">alter table 表名 rename column 原字段名 to 新字段名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="3-表中添加新的字段"><a href="#3-表中添加新的字段" class="headerlink" title="3. 表中添加新的字段"></a>3. 表中添加新的字段</h3><pre class="line-numbers language-none"><code class="language-none">alter table 表名 add 字段名 字段类型;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="4-删除表中字段"><a href="#4-删除表中字段" class="headerlink" title="4. 删除表中字段"></a>4. 删除表中字段</h3><pre class="line-numbers language-none"><code class="language-none">alter table 表名 drop column 字段名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="5-截断表-（清除表中数据）"><a href="#5-截断表-（清除表中数据）" class="headerlink" title="5. 截断表 （清除表中数据）"></a>5. 截断表 （清除表中数据）</h3><pre class="line-numbers language-none"><code class="language-none">truncate table 表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="6-删除表"><a href="#6-删除表" class="headerlink" title="6. 删除表"></a>6. 删除表</h3><pre class="line-numbers language-none"><code class="language-none">drop table 表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="7-有条件的删除表中数据"><a href="#7-有条件的删除表中数据" class="headerlink" title="7. 有条件的删除表中数据"></a>7. 有条件的删除表中数据</h3><pre class="line-numbers language-none"><code class="language-none">delete from 表名 where 字段名&#x3D;字段值;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="8-复制表"><a href="#8-复制表" class="headerlink" title="8. 复制表"></a>8. 复制表</h3><h4 id="8-1-创建表时复制另一张表中的数据"><a href="#8-1-创建表时复制另一张表中的数据" class="headerlink" title="8.1 创建表时复制另一张表中的数据"></a>8.1 创建表时复制另一张表中的数据</h4><pre class="line-numbers language-none"><code class="language-none">create table 表名 as select 字段1,...,字段n from 被复制的表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="8-2-将另一张表的数据插入到表中"><a href="#8-2-将另一张表的数据插入到表中" class="headerlink" title="8.2 将另一张表的数据插入到表中"></a>8.2 将另一张表的数据插入到表中</h4><pre class="line-numbers language-none"><code class="language-none">insert into 表名 (字段1,...,字段n) select 字段1,...,字段n from 被复制的表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="9-常用约束"><a href="#9-常用约束" class="headerlink" title="9. 常用约束"></a>9. 常用约束</h3><h4 id="9-1-主键约束-primary-key"><a href="#9-1-主键约束-primary-key" class="headerlink" title="9.1 主键约束 primary key"></a>9.1 主键约束 primary key</h4><h5 id="9-1-1-建表时添加主键"><a href="#9-1-1-建表时添加主键" class="headerlink" title="9.1.1 建表时添加主键"></a>9.1.1 建表时添加主键</h5><pre class="line-numbers language-none"><code class="language-none">字段名 字段类型 primary key;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h5 id="9-1-2-表追加主键"><a href="#9-1-2-表追加主键" class="headerlink" title="9.1.2 表追加主键"></a>9.1.2 表追加主键</h5><pre class="line-numbers language-none"><code class="language-none">alter table 表名 add primary key(字段名);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="9-2-联合主键-constraint…-…-primary-key"><a href="#9-2-联合主键-constraint…-…-primary-key" class="headerlink" title="9.2 联合主键 constraint… … primary key"></a>9.2 联合主键 constraint… … primary key</h4><h5 id="9-2-1-建表时添加联合主键"><a href="#9-2-1-建表时添加联合主键" class="headerlink" title="9.2.1 建表时添加联合主键"></a>9.2.1 建表时添加联合主键</h5><pre class="line-numbers language-none"><code class="language-none">constraint 主键名称 primary key(字段1,...,字段n)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h5 id="9-2-2-追加联合主键"><a href="#9-2-2-追加联合主键" class="headerlink" title="9.2.2 追加联合主键"></a>9.2.2 追加联合主键</h5><pre class="line-numbers language-none"><code class="language-none">alter table add constraint 主键名称 primary key(字段1,...字段n)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>Oracle</category>
-      </categories>
-      <tags>
-        <tag>Oracle 基础 用户操作 表空间操作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JDBC连接数据库</title>
     <url>/2022/03/17/JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<p>jdbc连接数据库的步骤：<br>1.注册驱动<br>2.取数据库连接<br>3.创建数据库操作对象Statement或PreparedStatement<br>4.执行sql语句 executeUpdate处理增删改的操作，executeQuery处理查询操作<br>5.处理查询结果集，只有查询才有此步<br>6.关闭连接，释放资源</p>
@@ -156,6 +80,82 @@ class jdbcTest&#123;
       </tags>
   </entry>
   <entry>
+    <title>Maven换源</title>
+    <url>/2022/01/10/Maven%E6%8D%A2%E6%BA%90/</url>
+    <content><![CDATA[<p>maven文件路径下找到setting.xml进行编辑修改：<br>D:\Software\JavaTools\apache-maven-3.6.1\conf\settings.xml</p>
+<span id="more"></span>
+
+<!-- 阿里云仓库 -->
+<pre><code>    &lt;mirror&gt;
+        &lt;id&gt;alimaven&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;aliyun maven&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/repositories/central/&lt;/url&gt;
+    &lt;/mirror&gt;
+
+    &lt;!-- 中央仓库1 --&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;repo1&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+        &lt;url&gt;http://repo1.maven.org/maven2/&lt;/url&gt;
+    &lt;/mirror&gt;
+
+    &lt;!-- 中央仓库2 --&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;repo2&lt;/id&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+        &lt;url&gt;http://repo2.maven.org/maven2/&lt;/url&gt;
+    &lt;/mirror&gt;
+</code></pre>
+]]></content>
+      <categories>
+        <category>maven</category>
+      </categories>
+      <tags>
+        <tag>maven换阿里源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Oracle基础（一）</title>
+    <url>/2021/09/13/Oracle%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="用户操作"><a href="#用户操作" class="headerlink" title="用户操作"></a>用户操作</h2><h3 id="1-解锁用户"><a href="#1-解锁用户" class="headerlink" title="1. 解锁用户"></a>1. 解锁用户</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 account unlock;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-锁定用户"><a href="#2-锁定用户" class="headerlink" title="2. 锁定用户"></a>2. 锁定用户</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 account lock;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3-用户密码修改"><a href="#3-用户密码修改" class="headerlink" title="3. 用户密码修改"></a>3. 用户密码修改</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 identified by 密码 ;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-用户默认修改表空间"><a href="#4-用户默认修改表空间" class="headerlink" title="4. 用户默认修改表空间"></a>4. 用户默认修改表空间</h3><pre class="line-numbers language-none"><code class="language-none">alter user 用户名 default tablspace 表空间名称 ;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<span id="more"></span>
+
+<h2 id="表空间操作"><a href="#表空间操作" class="headerlink" title="表空间操作"></a>表空间操作</h2><h3 id="1-表空间状态修改"><a href="#1-表空间状态修改" class="headerlink" title="1. 表空间状态修改"></a>1. 表空间状态修改</h3><h4 id="1-1-联机状态-online"><a href="#1-1-联机状态-online" class="headerlink" title="1.1 联机状态 online"></a>1.1 联机状态 online</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 online;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="1-2-脱机状态-offline"><a href="#1-2-脱机状态-offline" class="headerlink" title="1.2 脱机状态 offline"></a>1.2 脱机状态 offline</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 offline;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-表空间读写属性设置-（默认属性是-online-，表示可读写）"><a href="#2-表空间读写属性设置-（默认属性是-online-，表示可读写）" class="headerlink" title="2. 表空间读写属性设置 （默认属性是 online ，表示可读写）"></a>2. 表空间读写属性设置 （默认属性是 online ，表示可读写）</h3><h4 id="2-1-只读-read-only"><a href="#2-1-只读-read-only" class="headerlink" title="2.1 只读 read only"></a>2.1 只读 read only</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 read only;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="2-2-读写-read-write"><a href="#2-2-读写-read-write" class="headerlink" title="2.2 读写 read write"></a>2.2 读写 read write</h4><pre class="line-numbers language-none"><code class="language-none">alter tablespace 表空间名称 read write;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3-表空间状态查询"><a href="#3-表空间状态查询" class="headerlink" title="3. 表空间状态查询"></a>3. 表空间状态查询</h3><pre class="line-numbers language-none"><code class="language-none">alter tablespace_name &#39;表空间名称&#39;,status &#39;表空间状态&#39; from dba_tablespaces where tablespacename&#x3D;&#39;表空间名称&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-删除表空间"><a href="#4-删除表空间" class="headerlink" title="4. 删除表空间"></a>4. 删除表空间</h3><h4 id="4-1-删除空表空间"><a href="#4-1-删除空表空间" class="headerlink" title="4.1 删除空表空间"></a>4.1 删除空表空间</h4><pre class="line-numbers language-none"><code class="language-none">drop tablespace 表空间名称;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="4-2-删除非空表空间"><a href="#4-2-删除非空表空间" class="headerlink" title="4.2 删除非空表空间"></a>4.2 删除非空表空间</h4><pre class="line-numbers language-none"><code class="language-none">drop tablespace 表空间名称 including contents;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="4-3-删除非空表空间及物理文件"><a href="#4-3-删除非空表空间及物理文件" class="headerlink" title="4.3 删除非空表空间及物理文件"></a>4.3 删除非空表空间及物理文件</h4><pre class="line-numbers language-none"><code class="language-none">drop tablespace 表空间名称 including contents and datafiles;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h2><h3 id="1-修改表中字段类型"><a href="#1-修改表中字段类型" class="headerlink" title="1. 修改表中字段类型"></a>1. 修改表中字段类型</h3><pre class="line-numbers language-none"><code class="language-none">alter  table 表名 modify 字段名 字段类型;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-修改表中字段名称"><a href="#2-修改表中字段名称" class="headerlink" title="2. 修改表中字段名称"></a>2. 修改表中字段名称</h3><pre class="line-numbers language-none"><code class="language-none">alter table 表名 rename column 原字段名 to 新字段名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3-表中添加新的字段"><a href="#3-表中添加新的字段" class="headerlink" title="3. 表中添加新的字段"></a>3. 表中添加新的字段</h3><pre class="line-numbers language-none"><code class="language-none">alter table 表名 add 字段名 字段类型;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4-删除表中字段"><a href="#4-删除表中字段" class="headerlink" title="4. 删除表中字段"></a>4. 删除表中字段</h3><pre class="line-numbers language-none"><code class="language-none">alter table 表名 drop column 字段名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="5-截断表-（清除表中数据）"><a href="#5-截断表-（清除表中数据）" class="headerlink" title="5. 截断表 （清除表中数据）"></a>5. 截断表 （清除表中数据）</h3><pre class="line-numbers language-none"><code class="language-none">truncate table 表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="6-删除表"><a href="#6-删除表" class="headerlink" title="6. 删除表"></a>6. 删除表</h3><pre class="line-numbers language-none"><code class="language-none">drop table 表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="7-有条件的删除表中数据"><a href="#7-有条件的删除表中数据" class="headerlink" title="7. 有条件的删除表中数据"></a>7. 有条件的删除表中数据</h3><pre class="line-numbers language-none"><code class="language-none">delete from 表名 where 字段名&#x3D;字段值;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="8-复制表"><a href="#8-复制表" class="headerlink" title="8. 复制表"></a>8. 复制表</h3><h4 id="8-1-创建表时复制另一张表中的数据"><a href="#8-1-创建表时复制另一张表中的数据" class="headerlink" title="8.1 创建表时复制另一张表中的数据"></a>8.1 创建表时复制另一张表中的数据</h4><pre class="line-numbers language-none"><code class="language-none">create table 表名 as select 字段1,...,字段n from 被复制的表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="8-2-将另一张表的数据插入到表中"><a href="#8-2-将另一张表的数据插入到表中" class="headerlink" title="8.2 将另一张表的数据插入到表中"></a>8.2 将另一张表的数据插入到表中</h4><pre class="line-numbers language-none"><code class="language-none">insert into 表名 (字段1,...,字段n) select 字段1,...,字段n from 被复制的表名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="9-常用约束"><a href="#9-常用约束" class="headerlink" title="9. 常用约束"></a>9. 常用约束</h3><h4 id="9-1-主键约束-primary-key"><a href="#9-1-主键约束-primary-key" class="headerlink" title="9.1 主键约束 primary key"></a>9.1 主键约束 primary key</h4><h5 id="9-1-1-建表时添加主键"><a href="#9-1-1-建表时添加主键" class="headerlink" title="9.1.1 建表时添加主键"></a>9.1.1 建表时添加主键</h5><pre class="line-numbers language-none"><code class="language-none">字段名 字段类型 primary key;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="9-1-2-表追加主键"><a href="#9-1-2-表追加主键" class="headerlink" title="9.1.2 表追加主键"></a>9.1.2 表追加主键</h5><pre class="line-numbers language-none"><code class="language-none">alter table 表名 add primary key(字段名);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="9-2-联合主键-constraint…-…-primary-key"><a href="#9-2-联合主键-constraint…-…-primary-key" class="headerlink" title="9.2 联合主键 constraint… … primary key"></a>9.2 联合主键 constraint… … primary key</h4><h5 id="9-2-1-建表时添加联合主键"><a href="#9-2-1-建表时添加联合主键" class="headerlink" title="9.2.1 建表时添加联合主键"></a>9.2.1 建表时添加联合主键</h5><pre class="line-numbers language-none"><code class="language-none">constraint 主键名称 primary key(字段1,...,字段n)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="9-2-2-追加联合主键"><a href="#9-2-2-追加联合主键" class="headerlink" title="9.2.2 追加联合主键"></a>9.2.2 追加联合主键</h5><pre class="line-numbers language-none"><code class="language-none">alter table add constraint 主键名称 primary key(字段1,...字段n)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Oracle</category>
+      </categories>
+      <tags>
+        <tag>Oracle 基础 用户操作 表空间操作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Oracle常用函数</title>
     <url>/2021/09/13/Oracle%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<p>0x00 前言</p>
@@ -168,26 +168,6 @@ class jdbcTest&#123;
       </categories>
       <tags>
         <tag>常用函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Oracle游标扩容</title>
-    <url>/2021/09/14/Oracle%E6%B8%B8%E6%A0%87%E6%89%A9%E5%AE%B9/</url>
-    <content><![CDATA[<h2 id="查看当前游标"><a href="#查看当前游标" class="headerlink" title="查看当前游标"></a>查看当前游标</h2><pre class="line-numbers language-none"><code class="language-none">show parameter open_cursors;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><pre class="line-numbers language-none"><code class="language-none">alter system set open_cursors&#x3D;1000;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><pre class="line-numbers language-none"><code class="language-none">commit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<span id="more"></span>
-
-
-]]></content>
-      <categories>
-        <category>oracle</category>
-      </categories>
-      <tags>
-        <tag>游标</tag>
       </tags>
   </entry>
   <entry>
@@ -209,6 +189,26 @@ class jdbcTest&#123;
       </categories>
       <tags>
         <tag>expdp/impdp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Oracle游标扩容</title>
+    <url>/2021/09/14/Oracle%E6%B8%B8%E6%A0%87%E6%89%A9%E5%AE%B9/</url>
+    <content><![CDATA[<h2 id="查看当前游标"><a href="#查看当前游标" class="headerlink" title="查看当前游标"></a>查看当前游标</h2><pre class="line-numbers language-none"><code class="language-none">show parameter open_cursors;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><pre class="line-numbers language-none"><code class="language-none">alter system set open_cursors&#x3D;1000;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h2><pre class="line-numbers language-none"><code class="language-none">commit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<span id="more"></span>
+
+
+]]></content>
+      <categories>
+        <category>oracle</category>
+      </categories>
+      <tags>
+        <tag>游标</tag>
       </tags>
   </entry>
   <entry>
